@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {useDispatch} from "react-redux";
 import {addProduct, minusProduct, removeProduct, TCartItem} from "../../redux/slices/cartSlice";
 
@@ -30,6 +30,11 @@ const CartItem: React.FC<TCartItemProps> = ({id, title, price, imageUrl, type, s
     const onClickRemove = () => {
         dispatch(removeProduct({id, price, count} as TCartItem))
     }
+    useEffect(() => {
+        if (count === 0) {
+            dispatch(removeProduct({id, price, count} as TCartItem))
+        }
+    }, [id, price, count, dispatch])
     return (
         <div className="cart__item">
             <div className="cart__item-img">

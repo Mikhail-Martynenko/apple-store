@@ -10,9 +10,9 @@ function App() {
     return (
         <Routes>
             <Route path="/" element={<StaticLayout/>}>
-                <Route path='' element={<MainPage/>}/>
-                <Route path='cart' element={<CartPage/>}/>
-                <Route path='item/:id' element={<ItemPage/>}/>
+                <Route path='apple-store/main' element={<MainPage/>}/>
+                <Route path='apple-store/cart' element={<CartPage/>}/>
+                <Route path='apple-store/item/:id' element={<ItemPage/>}/>
                 <Route path='*' element={<NotFoundPage/>}/>
             </Route>
         </Routes>

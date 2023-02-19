@@ -8,7 +8,7 @@ const NotFound: React.FC = () => {
             <h1>
                 Такой страницы не существует
             </h1>
-            <Link to='/'>
+            <Link to='/apple-store/main'>
                 <button className={styles.btn}>Вернуться на главную страницу</button>
             </Link>
         </div>

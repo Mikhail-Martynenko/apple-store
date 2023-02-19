@@ -22,7 +22,7 @@ const Header = () => {
     return (
         <div className={styles.header}>
             <div className={styles.container}>
-                <Link to='/'>
+                <Link to='/apple-store/main'>
                     <div className={styles.header__logo}>
                         <img width="52" src={logo} alt="Logo"/>
                         <div>
@@ -30,8 +30,8 @@ const Header = () => {
                         </div>
                     </div>
                 </Link>
-                {location.pathname !== '/cart' && <Search/>}
-                    <Link to="/cart" className="button button--cart">
+                {location.pathname !== '/apple-store/cart' && <Search/>}
+                    <Link to="/apple-store/cart" className="button button--cart">
                         <span>{totalPrice} ₽</span>
                         <div className="button__delimiter"></div>
                         <svg

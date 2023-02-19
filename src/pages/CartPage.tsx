@@ -50,7 +50,7 @@ const CartPage: React.FC = () => {
                         <span> Сумма заказа: <b>{totalPrice} ₽</b></span>
                     </div>
                     <div className="cart__bottom-buttons">
-                        <Link to='/' className="button button--outline button--add go-back-btn">
+                        <Link to='/apple-store/main' className="button button--outline button--add go-back-btn">
                             <span>Вернуться назад</span>
                         </Link>
                         <button className="button pay-btn">

@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {addProduct, TCartItem, cartSelectorByItemId} from "../../redux/slices/cartSlice";
+import {addProduct, TCartItem, cartSelectorByItemId, minusProduct} from "../../redux/slices/cartSlice";
 import {Link} from "react-router-dom";
 import styles from "./ItemCard.module.scss"
 export type TItemCardProps = {
@@ -36,9 +36,14 @@ const ItemCard: React.FC<TItemCardProps> = ({id, imageUrl, title, types, sizes, 
         }
         dispatch(addProduct(product))
     }
+    const onClickRemove = () => {
+        if (addedCount > 0) {
+            dispatch(minusProduct(id))
+        }
+    }
     return (
         <div className={styles.itemBlock}>
-            <Link to={`/item/${id}`}>
+            <Link to={`/apple-store/item/${id}`}>
                 <img
                     className={styles.itemBlock__image}
                     src={imageUrl}
@@ -55,12 +60,15 @@ const ItemCard: React.FC<TItemCardProps> = ({id, imageUrl, title, types, sizes, 
                     {sizes.map((size, index) => <li key={size} onClick={() => setActiveSize(index)}
                                                     className={activeSize === index ? `${styles.active}` : ''}>{size} ГБ</li>)}
                 </ul>
+                <div className={styles.itemBlock__price}>{price} ₽</div>
             </div>
             <div className={styles.itemBlock__bottom}>
-                <div className={styles.itemBlock__price}>{price} ₽</div>
                 <button onClick={onClickAdd} className="button button--outline button--add">
-                    <span>Добавить</span>
+                    <span>В корзину</span>
                     {addedCount > 0 && <i>{addedCount}</i>}
+                </button>
+                <button onClick={onClickRemove} className="button button--outline button--add">
+                    <span>Удалить</span>
                 </button>
             </div>
         </div>
