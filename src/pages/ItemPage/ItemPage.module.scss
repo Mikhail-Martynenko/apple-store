@@ -1,0 +1,16 @@
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  &__title {
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  &__image{
+    width: 340px;
+    height: 480px;
+    padding: 20px 0;
+  }
+}

@@ -1,0 +1,24 @@
+@import "../../scss/variables";
+.root {
+  text-align: center;
+  padding: 120px;
+}
+h1 {
+  font-size: 54px;
+  font-weight: 700;
+}
+
+.btn {
+  font-size: 22px;
+  margin: 30px;
+  padding: 20px;
+  border: $violet solid 2px;
+  border-radius: 15px;
+  background-color: $violet;
+  transition: background-color 0.4s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #4f4fec;
+  }
+}
