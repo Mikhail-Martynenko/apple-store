@@ -41,6 +41,7 @@ const ItemCard: React.FC<TItemCardProps> = ({id, imageUrl, title, types, sizes, 
             dispatch(minusProduct(id))
         }
     }
+
     return (
         <div className={styles.itemBlock}>
             <Link to={`/apple-store/item/${id}`}>
@@ -67,9 +68,8 @@ const ItemCard: React.FC<TItemCardProps> = ({id, imageUrl, title, types, sizes, 
                     <span>В корзину</span>
                     {addedCount > 0 && <i>{addedCount}</i>}
                 </button>
-                <button onClick={onClickRemove} className="button button--outline button--add">
-                    <span>Удалить</span>
-                </button>
+                {addedCount > 0 && <button onClick={onClickRemove} className="button button--outline button--add"><span>Удалить</span></button>
+                }
             </div>
         </div>
     );

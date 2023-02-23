@@ -36,7 +36,7 @@ const ItemPage: React.FC = () => {
                     src={dataItem.imageUrl}
                     alt="item"
                 />
-                <Link to='/apple-store/main' className="button button--outline button--add go-back-btn">
+                <Link to='/apple-store' className="button button--outline button--add go-back-btn">
                     <span>Вернуться назад</span>
                 </Link>
             </div>

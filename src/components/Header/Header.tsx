@@ -22,7 +22,7 @@ const Header = () => {
     return (
         <div className={styles.header}>
             <div className={styles.container}>
-                <Link to='/apple-store/main'>
+                <Link to='/apple-store'>
                     <div className={styles.header__logo}>
                         <img width="52" src={logo} alt="Logo"/>
                         <div>

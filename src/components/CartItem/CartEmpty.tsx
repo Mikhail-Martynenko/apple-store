@@ -10,7 +10,7 @@ const CartEmpty: React.FC = () => {
                     Вероятней всего, вы не сделали заказ.<br/>
                     Вернитесь на главную страницу для добавления товаров в корзину.
                 </p>
-                <Link to="/apple-store/main" className="button button--black">
+                <Link to="/apple-store" className="button button--black">
                     <span>К покупкам!</span>
                 </Link>
             </div>

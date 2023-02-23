@@ -6,6 +6,13 @@ body {
   background-color: $background;
 }
 
+.errorHeader {
+  font-size: 40px;
+  text-align: center;
+  margin: 80px;
+
+}
+
 .wrapper {
   width: calc(100vw - 100px);
   height: 100%;
@@ -32,7 +39,9 @@ body {
     justify-content: space-between;
     row-gap: 30px;
     column-gap: 30px;
-
+    @media (max-width: 1100px) {
+      justify-content: space-around;
+    }
     @media (max-width: 750px) {
       justify-content: center;
       align-items: center;
@@ -124,6 +133,7 @@ body {
 
   &__item {
     display: flex;
+    column-gap: 10px;
     width: 100%;
     border-top: 1px solid $violet;
     padding-top: 30px;
@@ -146,24 +156,26 @@ body {
       flex-direction: column;
       justify-content: center;
       width: 40%;
-
+      text-align: center;
       h3 {
         font-weight: bold;
-        font-size: 22px;
+        font-size: 18px;
         line-height: 27px;
-        letter-spacing: 0.01em;
       }
 
       p {
         font-size: 18px;
         color: #8d8d8d;
+
       }
     }
 
     &-count {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
+      column-gap: 10px;
+      margin: 20px;
       width: 13%;
 
       &-minus {

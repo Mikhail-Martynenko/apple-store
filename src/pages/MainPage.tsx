@@ -15,6 +15,7 @@ const MainPage: React.FC = () => {
     const {search, categoryId, sortType, pageNumber} = useSelector(filterSelector)
     const {items, statusLoading} = useSelector(itemsSelector)
     const flagSearch = useRef(false) // flag для запроса с параметрами из начального состояния redux
+
     useEffect(() => {
         window.scrollTo(0, 0)
         if (!flagSearch.current) {
@@ -32,6 +33,10 @@ const MainPage: React.FC = () => {
         dispatch(setCategoryId(index))
     }, [dispatch])
 
+    const skeleton = [...new Array(8)].map((_, index: number) => <Skeleton key={index}/>);
+    const errorHeader = <h1 className='errorHeader'>Произошла ошибка, попробуйте повторить попытку позже!</h1>;
+    const nothingFoundHeader = <h1 className='errorHeader'>По вашему запросу ничего не найдено. Повторите попытку!</h1>;
+    const itemsDisplay = items.map((object) => <ItemCard key={object.id} {...object}/>);
     return (
         <div className="container">
             <div className="content__top">
@@ -42,14 +47,19 @@ const MainPage: React.FC = () => {
             <div className="content__items">
                 {
                     statusLoading === EStatusLoading.ERROR
-                        ?
-                        <h2 style={{textAlign: "center", margin: "80px"}}>Произошла ошибка, попробуйте повторить попытку позже!</h2>
+                        ? errorHeader
                         : (statusLoading === EStatusLoading.LOADING
-                            ? [...new Array(8)].map((_, index: number) => <Skeleton key={index}/>)
-                            : items.map((object) => <ItemCard key={object.id} {...object}/>))
+                                ? skeleton
+                                : (statusLoading === EStatusLoading.SUCCESS && items.length !== 0
+                                        ? itemsDisplay
+                                        : nothingFoundHeader
+                                )
+                        )
                 }
             </div>
-            <Pagination/>
+            {
+                items.length !== 0 ? <Pagination/> : ''
+            }
         </div>
     );
 };

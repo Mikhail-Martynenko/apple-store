@@ -24,4 +24,7 @@
   margin: 20px;
   font-size: 16px;
   padding: 10px 10px 10px 60px;
+  @media (max-width: 650px) {
+    width: 250px;
+  }
 }
