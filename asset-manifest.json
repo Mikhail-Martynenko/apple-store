@@ -1,14 +1,20 @@
 {
   "files": {
-    "main.css": "/apple-store/static/css/main.1f4e5be4.css",
-    "main.js": "/apple-store/static/js/main.cfe40e1b.js",
+    "main.css": "/apple-store/static/css/main.45e9927d.css",
+    "main.js": "/apple-store/static/js/main.ac733a27.js",
+    "CartPage.js": "/apple-store/static/js/CartPage.6472e2db.chunk.js",
+    "ItemPage.css": "/apple-store/static/css/ItemPage.761fbdf2.chunk.css",
+    "ItemPage.js": "/apple-store/static/js/ItemPage.8e2f787f.chunk.js",
     "static/media/logo.svg": "/apple-store/static/media/logo.80b5830e51ee3b00d7d21dd5d9d537ed.svg",
     "index.html": "/apple-store/index.html",
-    "main.1f4e5be4.css.map": "/apple-store/static/css/main.1f4e5be4.css.map",
-    "main.cfe40e1b.js.map": "/apple-store/static/js/main.cfe40e1b.js.map"
+    "main.45e9927d.css.map": "/apple-store/static/css/main.45e9927d.css.map",
+    "main.ac733a27.js.map": "/apple-store/static/js/main.ac733a27.js.map",
+    "CartPage.6472e2db.chunk.js.map": "/apple-store/static/js/CartPage.6472e2db.chunk.js.map",
+    "ItemPage.761fbdf2.chunk.css.map": "/apple-store/static/css/ItemPage.761fbdf2.chunk.css.map",
+    "ItemPage.8e2f787f.chunk.js.map": "/apple-store/static/js/ItemPage.8e2f787f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1f4e5be4.css",
-    "static/js/main.cfe40e1b.js"
+    "static/css/main.45e9927d.css",
+    "static/js/main.ac733a27.js"
   ]
 }
