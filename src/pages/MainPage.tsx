@@ -28,7 +28,6 @@ const MainPage: React.FC = () => {
         flagSearch.current = false;
     }, [categoryId, sortType, search, pageNumber, dispatch]);
 
-// Оптимизируем вызов, теперь вызывается один раз при перерисовке
     const onClickCategory = useCallback((index: number) => {
         dispatch(setCategoryId(index))
     }, [dispatch])

@@ -17,7 +17,7 @@ const Sort: React.FC =() => {
     const dispatch = useDispatch()
     const {sortType} = useSelector(filterSelector)
 
-    const divRef = useRef<HTMLDivElement>(null) // используем, чтобы достать объект сортировки из div'а
+    const divRef = useRef<HTMLDivElement>(null)
 
     const onClickSort = (objectSort: ArraySorts) => {
         dispatch(setSortType(objectSort))
@@ -25,9 +25,7 @@ const Sort: React.FC =() => {
     }
 
     useEffect(() => {
-        // Скрываем окно сортировки при клике на любую область окна
         const handleClickOutside = (event: MouseEvent) => {
-            // Если в пути не присутствует divRef.current, т.е. сортировка, то закрываем окно сортировки
             if (divRef.current && !event.composedPath().includes(divRef.current)) {
                 setIsVisibleSort(false)
             }
@@ -35,7 +33,6 @@ const Sort: React.FC =() => {
 
         document.body.addEventListener('click', handleClickOutside);
 
-        // удаляем обработчик событий при размонтировании
         return () => document.body.removeEventListener('click', handleClickOutside);
     }, []);
 

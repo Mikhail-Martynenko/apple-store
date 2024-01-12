@@ -30,7 +30,6 @@ interface IItemsInitialState {
     statusLoading: EStatusLoading
 }
 
-// Создаю асинхронный экшен (action) и делаю запрос // Возвращаемый тип CartItem[], типизирую params Record<string, string>
 export const fetchItemById = createAsyncThunk<TItem[], TSearchItemParams>('items/fetchByIdStatus', async (params) => {
         const {categoryIdCurrent, searchValue, pageNumber, sortType} = params;
         const response = await axios.get(`https://63e65191c8839ccc2855cf42.mockapi.io/apple-products?page=${pageNumber}&limit=8&${categoryIdCurrent}${searchValue}&sortBy=${sortType.sortProperty}&order=asc`);

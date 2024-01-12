@@ -10,7 +10,6 @@ const CartPage: React.FC = () => {
     const {totalPrice, products} = useSelector(cartSelector)
     const totalCount = products.reduce((acc: number, product: TCartItem) => acc + product.count, 0)
 
-    // Очистка корзины
     const onClickClear = () => {
         dispatch(clearProducts())
     }

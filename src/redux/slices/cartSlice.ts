@@ -22,7 +22,7 @@ const {totalPrice, products} = getCartLocalStorage()
 
 const initialState: ICartInitialState = {
     totalPrice,
-    products,// products: []
+    products,
 };
 
 export const cartSlice = createSlice({
@@ -30,9 +30,7 @@ export const cartSlice = createSlice({
     initialState,
     reducers: {
         addProduct: (state, action: PayloadAction<TCartItem>) => {
-            // находим объект в массиве
             const findItem = state.products.find((object) => object.id === action.payload.id)
-            // если в массиве уже есть элемент, то просто увеличиваем счетчик, иначе добавляем в массив и устанавливаем count = 1
             if (findItem) {
                 findItem.count++;
             } else {
@@ -59,7 +57,7 @@ export const cartSlice = createSlice({
         },
     },
 })
-// Создал для удобства, чтобы не писать повторяющийся код при вызове useSelector // Redux-selector
+
 export const cartSelector = (state: RootState) => state.cartReducer;
 export const cartSelectorByItemId = (id: string) => (state: RootState) => state.cartReducer.products.find(obj => obj.id === id);
 export const {addProduct, removeProduct, clearProducts, minusProduct} = cartSlice.actions

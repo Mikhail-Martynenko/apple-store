@@ -1,11 +1,14 @@
 import React, {memo} from 'react';
 import styles from './Categories.module.scss'
+
 type TCategoriesProps = {
     category: number;
     onClickCategory: (index: number) => void;
 }
-const Categories: React.FC<TCategoriesProps> = memo(({category, onClickCategory}) => {
+
+const Categories: React.FC<TCategoriesProps> = ({category, onClickCategory}) => {
     const categories: string[] = ['Все', 'iPhone 14', 'iPhone 13', 'iPhone 12', 'iPhone 11']
+
     return (
         <div className={styles.categories}>
             <h2 className='content__title'>Модель</h2>
@@ -17,5 +20,6 @@ const Categories: React.FC<TCategoriesProps> = memo(({category, onClickCategory}
             </ul>
         </div>
     );
-})
-export default Categories;
+}
+
+export default memo(Categories);
