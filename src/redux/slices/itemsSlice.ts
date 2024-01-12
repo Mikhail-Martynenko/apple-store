@@ -50,7 +50,6 @@ export const itemsSlice = createSlice({
         builder.addCase(fetchItemById.pending, (state) => {
             state.statusLoading = EStatusLoading.LOADING;
             state.items = [];
-
         });
         builder.addCase(fetchItemById.fulfilled, (state, action) => {
             state.statusLoading = EStatusLoading.SUCCESS;

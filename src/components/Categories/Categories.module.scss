@@ -5,6 +5,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    column-gap: 10px;
+    row-gap: 10px;
 
     li {
       background-color: #f9f9f9;

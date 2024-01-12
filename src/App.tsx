@@ -7,6 +7,7 @@ import React, {Suspense} from "react";
 
 const CartPage = React.lazy(() => import(/*webpackChunkName: "CartPage"*/'./pages/CartPage'));
 const ItemPage = React.lazy(() => import(/*webpackChunkName: "ItemPage"*/'./pages/ItemPage/ItemPage'));
+
 function App() {
     return (
         <Routes>

@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactPaginate from 'react-paginate';
 import styles from './Pagination.module.scss'
-import {useDispatch} from "react-redux";
 import {setPageNumber} from "../../redux/slices/filterSlice";
+import {useAppDispatch} from "../../redux/store";
 
 const Pagination: React.FC = () => {
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch()
     return (
         <>
             <ReactPaginate className={styles.root}

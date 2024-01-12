@@ -1,11 +1,11 @@
 import React, {useEffect, useRef, useState} from 'react';
 import styles from './Search.module.scss'
 import {useDebounce} from "use-debounce";
-import {useDispatch} from "react-redux";
 import {setSearch} from "../../redux/slices/filterSlice"
+import {useAppDispatch} from "../../redux/store";
 
 const Search: React.FC = () => {
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch()
     const [searchLocal, setSearchLocal] = useState('')
 
     const inputRef = useRef<HTMLInputElement>(null)
